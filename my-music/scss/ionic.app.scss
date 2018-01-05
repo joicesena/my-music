@@ -21,8 +21,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+//Google fonts
+@import url('https://fonts.googleapis.com/css?family=Magra');
+
 .logo-image {
   margin-left: 6px;
   height: 30px;
   width: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Magra', sans-serif;
 }
