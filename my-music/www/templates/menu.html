@@ -9,27 +9,27 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+    <ion-nav-view name="mainContent"></ion-nav-view>
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">My music</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+        <a class="item item-icon-left" menu-close ng-click="login()">
+          <i class="icon ion-android-person"></i>
           Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+        </a>
+        <a class="item item-icon-left" menu-close href="#/main/browse-music">
+          <i class="icon ion-search"></i>
+          Browse Music
+        </a>
+        <a class="item item-icon-left" menu-close href="#/main/playlists">
+          <i class="icon ion-ios-musical-notes"></i>
           Playlists
-        </ion-item>
+        </a>
       </ion-list>
     </ion-content>
   </ion-side-menu>

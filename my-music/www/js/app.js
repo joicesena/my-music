@@ -26,33 +26,24 @@ angular.module('music', ['ionic', 'music.controllers'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
+    url: '/main',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.browse-music', {
+      url: '/browse-music',
       views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
+        'mainContent': {
+          templateUrl: 'templates/browse-music.html'
         }
       }
     })
     .state('app.playlists', {
       url: '/playlists',
       views: {
-        'menuContent': {
+        'mainContent': {
           templateUrl: 'templates/playlists.html',
           controller: 'PlaylistsCtrl'
         }
@@ -62,12 +53,12 @@ angular.module('music', ['ionic', 'music.controllers'])
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
-      'menuContent': {
+      'mainContent': {
         templateUrl: 'templates/playlist.html',
         controller: 'PlaylistCtrl'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/main/playlists');
 });
