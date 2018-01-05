@@ -21,3 +21,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.logo-image {
+  margin-left: 6px;
+  height: 30px;
+  width: 30px;
+}
