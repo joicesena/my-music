@@ -1,5 +1,15 @@
 <ion-view view-title="Browse Music">
   <ion-content>
     <h1>Browse Music</h1>
+
+    <ion-list ng-repeat="music in musics">
+      <a class="item item-thumbnail-left">
+        <img ng-src="{{music.albumArtURL}}"/>
+        <h2>{{music.title}}</h2>
+        <p>{{music.album}}</p>
+        <p>{{music.artist}}</p>
+      </a>
+    </ion-list>
+
   </ion-content>
 </ion-view>
