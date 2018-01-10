@@ -42,14 +42,14 @@
     };
   })
 
-  app.controller('PlaylistsCtrl', [ '$scope', '$http', function($scope, $http) {
+  app.controller('PlaylistsCtrl', function($scope, PlaylistService) {
     $scope.playlists = [ ];
-    $http.get('http://mah-music-api.herokuapp.com/playlists').success(function(data) {
-        $scope.playlists = data;
-    });
-  }]);
+     PlaylistService.getPlaylists().then(playlists => $scope.playlists = playlists);
+  });
 
-  app.controller('PlaylistCtrl', function($scope, $stateParams) {
+  app.controller('PlaylistCtrl', function($scope, $stateParams, PlaylistService) {
+    PlaylistService.getPlaylist($stateParams.playlistId).then(playlist => $scope.playlist = playlist);
+
   });
 
   app.controller('BrowseMusicCtrl', [ '$scope', '$http', function($scope, $http) {

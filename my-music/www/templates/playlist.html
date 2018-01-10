@@ -1,5 +1,16 @@
 <ion-view view-title="Playlist">
   <ion-content>
-    <h1>Playlist</h1>
+    <h1>{{ playlist.title }}</h1>
+    <h4>Created by: {{ playlist.creator.name }}</h4>
+
+    <ion-list ng-repeat="song in playlist.songs | orderBy:'title'">
+      <a class="item item-thumbnail-left">
+        <img ng-src="{{song.albumArtURL}}"/>
+        <h2>{{song.title}}</h2>
+        <p>{{song.album}}</p>
+        <p>{{song.artist}}</p>
+      </a>
+    </ion-list>
+    
   </ion-content>
 </ion-view>
