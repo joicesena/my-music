@@ -42,13 +42,12 @@
     };
   })
 
-  app.controller('PlaylistsCtrl', function($scope) {
-    $scope.playlists = [
-      { title: 'Indie', id: 1 },
-      { title: 'Pop', id: 2 },
-      { title: 'Rock', id: 3 }
-    ];
-  })
+  app.controller('PlaylistsCtrl', [ '$scope', '$http', function($scope, $http) {
+    $scope.playlists = [ ];
+    $http.get('http://mah-music-api.herokuapp.com/playlists').success(function(data) {
+        $scope.playlists = data;
+    });
+  }]);
 
   app.controller('PlaylistCtrl', function($scope, $stateParams) {
   });
