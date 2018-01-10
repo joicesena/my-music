@@ -53,23 +53,11 @@
   app.controller('PlaylistCtrl', function($scope, $stateParams) {
   });
 
-  app.controller('BrowseMusicCtrl', function($scope) {
-    $scope.musics = [
-      { title: 'The Argument 1',
-        album: 'The Theory of Everything',
-        artist: 'Ayreon',
-        albumArtURL: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Ayreon-TheoryOfEverything-cd.jpg/220px-Ayreon-TheoryOfEverything-cd.jpg'
-      },
-      { title: 'The Scarecrow',
-        album: 'The Scarecrow',
-        artist: 'Avantasia',
-        albumArtURL: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Avantasia_-_The_Scarecrow_-_2008._Front.jpg/220px-Avantasia_-_The_Scarecrow_-_2008._Front.jpg'
-      },
-      { title: 'March of Time',
-        album: 'Keeper of the Seven Keys: Part II',
-        artist: 'Helloween',
-        albumArtURL: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/KotSK2.jpg/220px-KotSK2.jpg'
-      }
-    ];
-  })
+  app.controller('BrowseMusicCtrl', [ '$scope', '$http', function($scope, $http) {
+    $scope.songs = [ ];
+    $http.get('http://mah-music-api.herokuapp.com/songs').success(function(data) {
+      $scope.songs = data;
+    });
+  }]);
+
 })();

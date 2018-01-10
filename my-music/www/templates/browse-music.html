@@ -9,12 +9,12 @@
       </label>
     </div>
 
-    <ion-list ng-repeat="music in musics | filter:browseMusic.search | orderBy:'title'">
+    <ion-list ng-repeat="song in songs | filter:browseMusic.search | orderBy:'title'">
       <a class="item item-thumbnail-left">
-        <img ng-src="{{music.albumArtURL}}"/>
-        <h2>{{music.title}}</h2>
-        <p>{{music.album}}</p>
-        <p>{{music.artist}}</p>
+        <img ng-src="{{song.albumArtURL}}"/>
+        <h2>{{song.title}}</h2>
+        <p>{{song.album}}</p>
+        <p>{{song.artist}}</p>
       </a>
     </ion-list>
 
